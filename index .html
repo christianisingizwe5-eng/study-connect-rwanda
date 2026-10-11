@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Connect Rwanda</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f6fb;
+      color: #172554;
+    }
+    header {
+      background: #123b75;
+      color: white;
+      padding: 24px 18px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 10px; }
+    nav {
+      background: white;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px #0001;
+    }
+    nav a {
+      color: #123b75;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+    main {
+      max-width: 900px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+    .hero, .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 14px #0000000c;
+    }
+    .hero { text-align: center; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    button {
+      background: #1769e0;
+      color: white;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Study Connect Rwanda</h1>
+    <p>Learn, Practice, and Succeed Together</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <h2>Welcome to Study Connect Rwanda</h2>
+      <p>Your learning journey starts here.</p>
+      <button onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+        Explore Courses
+      </button>
+    </section>
+
+    <section id="courses">
+      <h2>Our Learning Areas</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>📚 Study Materials</h3>
+          <p>Prepare your lessons and review key concepts.</p>
+        </article>
+        <article class="card" id="quiz">
+          <h3>📝 Practice Quiz</h3>
+          <p id="question">What is the chemical formula of water?</p>
+          <button onclick="checkAnswer('CO2')">CO₂</button>
+          <button onclick="checkAnswer('H2O')">H₂O</button>
+          <button onclick="checkAnswer('O2')">O₂</button>
+          <p id="result" aria-live="polite"></p>
+        </article>
+        <article class="card" id="about">
+          <h3>🎓 About Us</h3>
+          <p>Connecting learners with opportunities to learn and grow.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Study Connect Rwanda
+  </footer>
+
+  <script>
+    function checkAnswer(answer) {
+      const result = document.getElementById('result');
+      if (answer === 'H2O') {
+        result.textContent = 'Correct! Well done.';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'Not quite. Try again!';
+        result.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
